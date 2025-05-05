@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maulik Vekariya | Data Scientist & Machine Learning Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width .3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        #toggleMenu:checked ~ .mobile-menu {
+            display: flex;
+        }
+        
+        .skill-badge {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .impact-stat {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .ongoing-badge {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold gradient-text">Maulik Vekariya</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-500 transition">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-500 transition">About</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-blue-500 transition">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-blue-500 transition">Projects</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-blue-500 transition">Experience</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-500 transition">Contact</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <input type="checkbox" id="toggleMenu" class="hidden">
+                    <label for="toggleMenu" class="text-gray-700 hover:text-blue-500 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu hidden md:hidden absolute top-16 left-0 right-0 bg-white shadow-lg flex-col items-center py-4 space-y-4">
+            <a href="#home" class="nav-link text-gray-700 hover:text-blue-500 transition">Home</a>
+            <a href="#about" class="nav-link text-gray-700 hover:text-blue-500 transition">About</a>
+            <a href="#skills" class="nav-link text-gray-700 hover:text-blue-500 transition">Skills</a>
+            <a href="#projects" class="nav-link text-gray-700 hover:text-blue-500 transition">Projects</a>
+            <a href="#experience" class="nav-link text-gray-700 hover:text-blue-500 transition">Experience</a>
+            <a href="#contact" class="nav-link text-gray-700 hover:text-blue-500 transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+                        Hi, I'm <span class="gradient-text">Maulik Vekariya</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">Data Scientist | Machine Learning Engineer</h2>
+                    <p class="text-gray-600 mb-8 max-w-lg">
+                        MSc Data Science graduate with expertise in building predictive models and data-driven solutions. 
+                        Passionate about transforming complex data into actionable insights that drive business value.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition shadow-lg">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="border border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition">
+                            Contact Me
+                        </a>
+                    </div>
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="impact-stat">90%+</div>
+                            <div class="text-gray-600">Model Accuracy</div>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <div class="impact-stat">10+</div>
+                            <div class="text-gray-600">Projects Completed</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center animate-fade-in delay-1">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center">
+                            <img src="Profile.jpg"
+                                  alt="Maulik Vekariya"
+                                  class="w-60 h-60 md:w-72 md:h-72 rounded-full object-cover border-4 border-white">
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-white p-4 rounded-full shadow-lg">
+                            <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white">
+                                <i class="fas fa-brain text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-16 animate-fade-in">
+                <span class="gradient-text">About Me</span>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row items-center animate-fade-in delay-1">
+                <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 rounded-lg overflow-hidden shadow-xl">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                                  alt="Data Science"
+                                  class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-semibold mb-4">Data Science Professional</h3>
+                    <p class="text-gray-600 mb-6">
+                        As an MSc Data Science graduate from the University of Hertfordshire, I specialize in developing machine learning models 
+                        that solve real business problems. My expertise spans predictive analytics, natural language processing, and deep learning, 
+                        with a strong foundation in statistical modeling and data engineering.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-graduation-cap text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">Education</h4>
+                                <p class="text-gray-600 text-sm">
+                                    MSc Data Science (Distinction)<br>
+                                    University of Hertfordshire, 2022-2024
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-bullseye text-purple-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">Career Focus</h4>
+                                <p class="text-gray-600 text-sm">
+                                    Seeking roles in:<br>
+                                    Data Science • Machine Learning • AI Engineering
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg mb-6">
+                        <h4 class="font-semibold mb-3">What I Bring to Your Team:</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Proven ability to develop high-accuracy predictive models (90%+ accuracy on multiple projects)</li>
+                            <li>Strong data storytelling skills to communicate complex findings to stakeholders</li>
+                            <li>Experience with full ML pipeline development from data collection to deployment</li>
+                            <li>Passion for continuous learning and staying current with AI advancements</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-16 animate-fade-in">
+                <span class="gradient-text">Technical Expertise</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 animate-fade-in delay-1">
+                <!-- Programming -->
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-code text-blue-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Programming</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Python</span>
+                                <span class="text-gray-700">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-500 h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">SQL</span>
+                                <span class="text-gray-700">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-500 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">R</span>
+                                <span class="text-gray-700">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-500 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ML/DL -->
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-purple-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-brain text-purple-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Machine Learning</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">TensorFlow/Keras</span>
+                                <span class="text-gray-700">90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-500 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Scikit-learn</span>
+                                <span class="text-gray-700">95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-500 h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">PyTorch</span>
+                                <span class="text-gray-700">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-purple-500 h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Data Tools -->
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-database text-green-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold">Data Tools</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Power BI</span>
+                                <span class="text-gray-700">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-green-500 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">Tableau</span>
+                                <span class="text-gray-700">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-green-500 h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-700">AWS/GCP</span>
+                                <span class="text-gray-700">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-green-500 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Skills -->
+            <div class="mt-12 animate-fade-in delay-2">
+                <h3 class="text-2xl font-semibold text-center mb-8">Specialized Knowledge Areas</h3>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex flex-wrap gap-4 justify-center">
+                        <span class="skill-badge bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">Natural Language Processing</span>
+                        <span class="skill-badge bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium">Time Series Forecasting</span>
+                        <span class="skill-badge bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium">Computer Vision</span>
+                        <span class="skill-badge bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full font-medium">Feature Engineering</span>
+                        <span class="skill-badge bg-red-100 text-red-800 px-4 py-2 rounded-full font-medium">Model Deployment</span>
+                        <span class="skill-badge bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium">Data Pipelines</span>
+                        <span class="skill-badge bg-pink-100 text-pink-800 px-4 py-2 rounded-full font-medium">A/B Testing</span>
+                        <span class="skill-badge bg-gray-100 text-gray-800 px-4 py-2 rounded-full font-medium">Statistical Modeling</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-16 animate-fade-in">
+                <span class="gradient-text">Data Science Projects</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in delay-1">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                              alt="NSE Analysis"
+                              class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold">NSE Stock Price Prediction</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">May 2024 – Sep 2024</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Developed an LSTM-based model achieving 92% accuracy in predicting stock prices for the National Stock Exchange of India.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 text-sm mb-4 space-y-1">
+                            <li>Engineered 15+ technical indicators as features (RSI, MACD, Bollinger Bands)</li>
+                            <li>Implemented multivariate time series analysis with 90-day lookback window</li>
+                            <li>Optimized hyperparameters using Bayesian optimization</li>
+                            <li>Deployed as Flask API with 95% uptime</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Python</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">TensorFlow</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">LSTM</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Flask</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">AWS EC2</span>
+                        </div>
+                        <a href="#" class="text-blue-500 hover:text-blue-700 text-sm font-medium">View Project Details →</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+                              alt="Sentiment Analysis"
+                              class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold">Financial Sentiment Analysis</h3>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Jan 2024 – Mar 2024</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Built a BERT-based model for multi-class sentiment classification of financial news with 92% F1-score.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 text-sm mb-4 space-y-1">
+                            <li>Collected and preprocessed 50,000+ financial news articles</li>
+                            <li>Fine-tuned BERT-base model with custom classification head</li>
+                            <li>Implemented attention visualization for model interpretability</li>
+                            <li>Reduced inference time by 40% with model quantization</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Python</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">HuggingFace</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">BERT</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">NLP</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">PyTorch</span>
+                        </div>
+                        <a href="#" class="text-blue-500 hover:text-blue-700 text-sm font-medium">View Project Details →</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80"
+                              alt="Image Segmentation"
+                              class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold">Medical Image Segmentation</h3>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Sep 2023 – Nov 2023</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Created a U-Net model for segmenting tumors in MRI scans with 89% Dice coefficient.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 text-sm mb-4 space-y-1">
+                            <li>Preprocessed 2,000+ MRI scans with data augmentation</li>
+                            <li>Implemented custom loss function combining Dice and Focal loss</li>
+                            <li>Achieved 15% better performance than baseline ResNet model</li>
+                            <li>Developed Grad-CAM visualization for model explainability</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Python</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">TensorFlow</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">U-Net</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">OpenCV</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Medical Imaging</span>
+                        </div>
+                        <a href="#" class="text-blue-500 hover:text-blue-700 text-sm font-medium">View Project Details →</a>
+                    </div>
+                </div>
+                
+                <!-- New Project: AI Financial Assistant -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1011&q=80"
+                              alt="AI Financial Assistant"
+                              class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4">
+                            <span class="ongoing-badge bg-yellow-500 text-white text-xs px-3 py-1 rounded-full font-medium">
+                                Ongoing Project
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-semibold">AI Financial Assistant</h3>
+                            <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">April 2025 – Present</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Developing an AI-powered financial assistant that provides personalized investment advice, budget optimization, 
+                            and financial literacy education using LLMs and predictive analytics.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-600 text-sm mb-4 space-y-1">
+                            <li>Integrating GPT-4 with financial APIs for real-time market analysis</li>
+                            <li>Building custom financial recommendation engine using user transaction data</li>
+                            <li>Developing risk assessment models for personalized investment strategies</li>
+                            <li>Creating interactive financial education modules with NLP-powered Q&A</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Python</span>
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">LLMs</span>
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">OpenAI API</span>
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Flask</span>
+                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">Plaid API</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <div class="w-full bg-gray-200 rounded-full h-2.5 mr-2">
+                                <div class="bg-red-500 h-2.5 rounded-full" style="width: 60%"></div>
+                            </div>
+                            <span>60% complete</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project CTA -->
+            <div class="mt-16 text-center animate-fade-in delay-2">
+                <h3 class="text-2xl font-semibold mb-4">Want to see more projects?</h3>
+                <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+                    I have several other projects including customer churn prediction, recommendation systems, 
+                    and anomaly detection implementations. Feel free to ask about them!
+                </p>
+                <a href="#contact" class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium transition shadow-lg">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-16 animate-fade-in">
+                <span class="gradient-text">Professional Experience</span>
+            </h2>
+            
+            <div class="space-y-8 animate-fade-in delay-1">
+                <!-- McDonald's -->
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold">Shift Manager</h3>
+                            <p class="text-gray-600">McDonald's, London | July 2023 – Present</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Leadership</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm ml-2">Operations</span>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li><strong>Data-Driven Decision Making:</strong> Analyzed sales patterns and customer flow data to optimize staffing schedules, reducing labor costs by 12% while maintaining service quality</li>
+                        <li><strong>Process Improvement:</strong> Implemented inventory tracking system that reduced food waste by 15% through predictive ordering based on historical data</li>
+                        <li><strong>Performance Metrics:</strong> Developed KPI dashboards for team performance tracking, leading to 20% improvement in service speed metrics</li>
+                        <li><strong>Team Leadership:</strong> Managed team of 15+ employees, conducting training sessions that improved employee retention by 25%</li>
+                        <li><strong>Customer Experience:</strong> Analyzed customer feedback data to identify pain points, implementing changes that increased satisfaction scores by 18%</li>
+                    </ul>
+                    <div class="mt-4">
+                        <h4 class="font-medium mb-2">Transferable Data Science Skills:</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Data Analysis</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Process Optimization</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">KPI Development</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Team Collaboration</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shayona -->
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold">Sales Assistant</h3>
+                            <p class="text-gray-600">Shayona Sweets & Savouries, London | Oct 2022 – April 2023</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Customer Service</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm ml-2">Sales</span>
+                        </div>
+                    </div>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2">
+                        <li><strong>Sales Analysis:</strong> Tracked and analyzed product sales data to identify top-performing items, contributing to 10% increase in revenue through strategic product placement</li>
+                        <li><strong>Customer Insights:</strong> Collected and organized customer preference data that informed new product development decisions</li>
+                        <li><strong>Inventory Management:</strong> Implemented basic forecasting model for stock replenishment, reducing stockouts by 30%</li>
+                        <li><strong>Cash Handling:</strong> Maintained 100% accuracy in financial transactions and daily sales reporting</li>
+                    </ul>
+                    <div class="mt-4">
+                        <h4 class="font-medium mb-2">Transferable Data Science Skills:</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Data Collection</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Basic Forecasting</span>
+                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Attention to Detail</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Academic Projects -->
+            <div class="mt-12 animate-fade-in delay-2">
+                <h3 class="text-2xl font-semibold text-center mb-8">Academic Data Science Experience</h3>
+                <div class="bg-white p-8 rounded-xl shadow-sm">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-lg font-semibold mb-3">MSc Dissertation: Predictive Maintenance Model</h4>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Developed LSTM-based model predicting equipment failure with 88% accuracy</li>
+                                <li>Processed sensor data from 50+ industrial machines with 1M+ data points</li>
+                                <li>Implemented anomaly detection system with 92% recall rate</li>
+                                <li>Published findings in university research journal</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-lg font-semibold mb-3">Data Mining Course Project</h4>
+                            <ul class="list-disc list-inside text-gray-600 space-y-2">
+                                <li>Applied clustering algorithms to customer segmentation problem</li>
+                                <li>Identified 5 distinct customer personas with actionable insights</li>
+                                <li>Presented findings to academic panel, receiving top marks</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-16 animate-fade-in">
+                <span class="gradient-text">Recommendations</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 animate-fade-in delay-1">
+                <div class="testimonial-card p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Professor" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Dr. Sarah Johnson</h4>
+                            <p class="text-gray-600 text-sm">Professor of Data Science, University of Hertfordshire</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Maulik demonstrated exceptional analytical skills in my Advanced Machine Learning course. His project on stock price prediction showcased not only technical prowess but also the ability to derive meaningful business insights from complex data."
+                    </p>
+                </div>
+                
+                <div class="testimonial-card p-8 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Manager" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">James Wilson</h4>
+                            <p class="text-gray-600 text-sm">Restaurant Manager, McDonald's</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Maulik's data-driven approach to shift management transformed our operations. His ability to analyze patterns and optimize schedules based on data significantly improved our efficiency. He would be an asset to any data team."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-16 animate-fade-in">
+                <span class="gradient-text">Let's Connect</span>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row animate-fade-in delay-1">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h3 class="text-2xl font-semibold mb-6">Get In Touch</h3>
+                    <p class="text-gray-600 mb-8">
+                        I'm actively seeking data science opportunities where I can apply my skills to solve challenging problems. 
+                        Whether you have a job opportunity, project idea, or just want to connect, I'd love to hear from you!
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-blue-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">Email</h4>
+                                <a href="mailto:maulikvekariya2000@gmail.com" class="text-blue-500 hover:text-blue-700">maulikvekariya2000@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-purple-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">Phone</h4>
+                                <a href="tel:+447405101469" class="text-gray-600 hover:text-blue-500">07405 101469</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-green-500"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-1">Location</h4>
+                                <p class="text-gray-600">London, UK (Willing to relocate)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-medium mb-4">Professional Profiles</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm text-gray-800 hover:bg-gray-100 transition">
+                                <i class="fab fa-github"></i>
+                            </a>                     
+                            <a href="#" class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm text-orange-500 hover:bg-orange-50 transition">
+                                <i class="fab fa-kaggle"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 bg-blue-50 p-6 rounded-lg">
+                        <h4 class="font-semibold mb-3">Currently Looking For:</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Data Scientist roles (entry-level or junior positions)</li>
+                            <li>Machine Learning Engineer opportunities</li>
+                            <li>Data Analyst positions with growth potential</li>
+                            <li>Research collaborations in AI/ML</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="bg-white p-8 rounded-xl shadow-sm">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Your Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">Select a subject</option>
+                                <option value="job">Job Opportunity</option>
+                                <option value="project">Project Collaboration</option>
+                                <option value="question">Question</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Your Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition shadow-lg">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-xl font-bold gradient-text">Maulik Vekariya</a>
+                    <p class="text-gray-400 mt-2">Data Scientist | Machine Learning Engineer</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-6 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-kaggle"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">© 2024 Maulik Vekariya. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-blue-500 text-white rounded-full shadow-lg flex items-center justify-center transition opacity-0 invisible hover:bg-blue-600">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const toggleMenu = document.getElementById('toggleMenu');
+                    if (toggleMenu.checked) {
+                        toggleMenu.checked = false;
+                        document.querySelector('.mobile-menu').classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Mobile menu toggle
+        const toggleMenu = document.getElementById('toggleMenu');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        toggleMenu.addEventListener('change', function() {
+            if (this.checked) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            }
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
