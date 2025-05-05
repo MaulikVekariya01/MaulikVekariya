@@ -2,4 +2,4 @@
 
 Data Science & Machine Learning Portfolio Website
 
-🔗 Live Demo: [https://maulikvekariya.github.io](https://maulikvekariya.github.io)
+🔗 Live Demo: [https://maulikvekariya01.github.io](https://maulikvekariya.github.io)
